@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Não Obstrutivo</title>
+</head>
+<body>
+  <h2>Digite seu nome:</h2>
+  <input type="text" id="nome" class="campo-nome" />
+  
+  <button id="btn-id">Usar getElementById</button>
+  <button id="btn-selector">Usar querySelector</button>
+  
+  <p id="saida"></p>
+
+  <script>
+    // Aguarda o carregamento do DOM
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      const btnId = document.getElementById("btn-id");
+      const btnSelector = document.getElementById("btn-selector");
+
+      // Evento para o botão que usa getElementById
+      btnId.addEventListener("click", () => {
+        const input = document.getElementById("nome");
+        const saida = document.getElementById("saida");
+        saida.textContent = "ID: " + input.value;
+      });
+
+      // Evento para o botão que usa querySelector
+      btnSelector.addEventListener("click", () => {
+        const input = document.querySelector(".campo-nome");
+        const saida = document.querySelector("#saida");
+        saida.textContent = "QuerySelector: " + input.value;
+      });
+
+    });
+  </script>
+</body>
+</html>
