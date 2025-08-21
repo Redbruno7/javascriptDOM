@@ -5,44 +5,58 @@ const produtos = [
     { nome: "Mel Puro", preco: 22.0, categoria: "alimento" }
 ];
 
-// Seletores
-const selectCategoria = document.getElementById("categoria");
-const divProdutos = document.getElementById("produtos");
-const divTotal = document.getElementById("total");
+// --- Seletores do DOM ---
+// Pega elementos do HTML pelo ID
+const selectCategoria = document.getElementById("categoria");   // filtro
+const divProdutos = document.getElementById("produtos");        // local dos produtos
+const divTotal = document.getElementById("total");              // soma valor total
 
-// Função para renderizar
+// --- Renderizando os produtos ---
 function renderizarProdutos(lista) {
+    // Limpa a lista antes de renderizar
     divProdutos.innerHTML = "";
 
+    // Cria "card" visual para cada produto
     lista.forEach(prod => {
-        const card = document.createElement("div");
-        card.classList.add("produto");
+        const card = document.createElement("article"); // cria um article
+        card.classList.add("produto");                  // adiciona classe CSS "produto"
+        
+        // Insere o conteúdo ao card - nome e preço
         card.innerHTML = `
             <h3>${prod.nome}</h3>
             <p>R$ ${prod.preco.toFixed(2)}</p>
         `;
 
+        // Adiciona card na seção produtos
         divProdutos.appendChild(card);
     });
 
-    // Usando reduce para calcular o total
+    // --- Calculando o total com reduce() ---
+    // Soma todos os preços dos produtos da lista atual
     const total = lista.reduce((acc, item) => acc + item.preco, 0);
+
+    // Mostra o total com 2 casas decimais
     divTotal.innerHTML = `Total: R$ ${total.toFixed(2)}`;
 }
 
-// Função para aplicar filtro
+// --- Aplicando o filtro de categoria ---
 function aplicarFiltro() {
+    // Pega o valor selecionado
     const categoria = selectCategoria.value;
 
+    // Se for "todos", mostra todos os produtos
+    // Caso contrário, filtra apenas os da categoria escolhida
     const filtrados = categoria === "todos"
         ? produtos
         : produtos.filter(p => p.categoria === categoria);
 
-        renderizarProdutos(filtrados);
+    // Renderiza os produtos filtrados
+    renderizarProdutos(filtrados);
 }
 
-// Evento de mudança no select
+// --- Evento de mudança no select ---
+// Ao mudar a categoria, chama aplicarFiltro()
 selectCategoria.addEventListener("change", aplicarFiltro);
 
-// Inicial
+// --- Inicializando ---
 aplicarFiltro();
