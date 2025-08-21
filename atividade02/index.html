@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Cabeçalho do Site-->
+    <header>
+        Loja de Produtos Naturais
+    </header>
+
+    <!--Container para o conteúdo-->
+    <main>
+        <!-- Filtro -->
+        <section class="filtro">
+            <label for="categoria">Filtrar por categoria:</label>
+
+            <select id="categoria">
+                <option value="todos">Todos</option>
+                <option value="cosmetico">Cosmético</option>
+                <option value="alimento">Alimento</option>
+            </select>
+        </section>
+
+        <!-- Lista de produtos -->
+        <section id="produtos" class="produtos"></section>
+
+        <!-- Total -->
+        <section id="total" class="total"></section>
+    </main>
+
+    <!--Javascript-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
