@@ -1,0 +1,82 @@
+/* css/estilo.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.cabecalho {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.caixa {
+    flex: 1 1 300px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.caixa h4 {
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.caixa input {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.caixa button {
+    width: 100%;
+    padding: 0.7rem;
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.caixa button:hover {
+    background: #005fa3;
+}
+
+.caixa p {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.rodape {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: white;
+    margin-top: 2rem;
+}
