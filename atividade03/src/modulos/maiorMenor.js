@@ -6,8 +6,8 @@ export function calcularMaiorMenor(a, b, c, resultado) {
     } else {
         const maior = Math.max(a, b, c);
         const menor = Math.min(a, b, c);
+
         resultado.innerHTML = `O maior número é ${maior}<br>O menor número é ${menor}`;
     }
     
 }
-    

@@ -1,9 +1,11 @@
-export function verificarVelocidade (vVelocidade, pVelocidade) {
-    if (isNaN(vVelocidade)) {
-        pVelocidade.textContent = "Digite um número válido!"
-    } else if (vVelocidade < 60) {
-        pVelocidade.textContent = "Você está dentro do límite de velocidade!"
+export function verificarVelocidade(vVelocidade, pVelocidade) {
+    vVelocidade = Number(vVelocidade);
+
+    if (isNaN(vVelocidade) || vVelocidade <= 0) {
+        pVelocidade.textContent = "Digite uma velocidade válida!";
+    } else if (vVelocidade <= 60) {
+        pVelocidade.textContent = `Sua velocidade é ${vVelocidade} km/h. Você está dentro do limite de velocidade!`;
     } else {
-        pVelocidade.textContent = "Você está fora do límite de velocidade! O limite é 60km/h"
+        pVelocidade.textContent = `Sua velocidade é ${vVelocidade} km/h. Você está acima do limite! O limite é 60 km/h.`;
     }
 }
